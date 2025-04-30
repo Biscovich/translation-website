@@ -126,3 +126,9 @@ footer {
     font-size: 1.4rem;
   }
 }
+.hero .btn:hover,
+.page .btn:hover {
+  background: linear-gradient(to right, #ffcc00, #ffa500);
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
