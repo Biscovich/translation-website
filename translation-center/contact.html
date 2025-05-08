@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакти – Центр Перекладів</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+    rel="stylesheet"
+  />
+  <style>
+    /* Висота карти */
+    #map {
+      height: 400px;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans pt-20 leading-relaxed">
+  <!-- Навігація -->
+  <nav class="bg-white shadow-md py-4 fixed w-full top-0 z-50">
+  <div class="container mx-auto px-6 flex justify-between items-center">
+    <a href="index.html" class="text-2xl font-bold text-indigo-600 hover:text-indigo-700">
+      Центр Перекладів
+    </a>
+    <div class="space-x-6">
+      <a href="about.html"    class="text-gray-700 hover:text-indigo-600">Про нас</a>
+      <a href="services.html" class="text-gray-700 hover:text-indigo-600">Послуги</a>
+      <a href="contact.html"  class="text-gray-700 hover:text-indigo-600">Контакти</a>
+      <a href="news.html"     class="text-gray-700 hover:text-indigo-600">Новини</a>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Контактна інформація -->
+  <section class="py-16 px-6">
+    <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+      <!-- Ліва колонка: дані -->
+      <div data-aos="fade-right">
+        <h1 class="text-4xl font-bold mb-6">Зв’язатися з нами</h1>
+        <dl class="space-y-4">
+          <div>
+            <dt class="font-semibold">Електронна пошта:</dt>
+            <dd>
+              <a href="mailto:info@translation-center.com" class="text-indigo-600 hover:underline">
+                info@translation-center.com
+              </a>,
+              <a href="mailto:support@translation-center.com" class="text-indigo-600 hover:underline">
+                support@translation-center.com
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="font-semibold">Телефони:</dt>
+            <dd>
+              <a href="tel:+380501234567" class="text-indigo-600 hover:underline">+38 (050) 123-45-67</a>,
+              <a href="tel:+380671234567" class="text-indigo-600 hover:underline">+38 (067) 123-45-67</a>
+            </dd>
+          </div>
+          <div>
+            <dt class="font-semibold">Адреса офісу:</dt>
+            <dd>вул. Хрещатик, 1, м. Київ, 01001, Україна</dd>
+          </div>
+        </dl>
+      </div>
+
+      <!-- Права колонка: карта -->
+      <div data-aos="fade-left">
+        <h2 class="text-2xl font-semibold mb-4">Де нас знайти</h2>
+        <!-- Google Maps iframe -->
+        <div id="map" class="rounded-lg overflow-hidden shadow-lg">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.1234567890123!2d30.5234!3d50.4501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce1234567890%3A0xabcdef1234567890!2z0JrQsNGA0YPQsdC40YbQsCwg0JrQsNGA0YPQuNC4LCDQuCDQv9C60LDRgNC40YQuLCDQqNC10L3QuNC5!5e0!3m2!1suk!2sua!4v1651234567890!5m2!1suk!2sua"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-100 py-8">
+    <div class="container mx-auto px-6 text-center text-gray-700">
+      <p>&copy; 2025 Центр Перекладів. Всі права захищені.</p>
+    </div>
+  </footer>
+
+  <!-- Скрипти -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 600, once: true });</script>
+</body>
+</html>

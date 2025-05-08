@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Замовити – Центр Перекладів</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans pt-20 leading-relaxed">
+  <nav class="bg-white shadow-md py-4 fixed w-full top-0 z-50">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-indigo-600 hover:text-indigo-700">
+        Центр Перекладів
+      </a>
+      <div class="space-x-6">
+        <a href="about.html"    class="text-gray-700 hover:text-indigo-600">Про нас</a>
+        <a href="services.html" class="text-gray-700 hover:text-indigo-600">Послуги</a>
+        <a href="contact.html"  class="text-gray-700 hover:text-indigo-600">Контакти</a>
+        <a href="news.html"     class="text-gray-700 hover:text-indigo-600">Новини</a>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="py-16 px-6">
+    <div class="max-w-xl mx-auto">
+      <h1 class="text-4xl font-bold mb-6 text-center">Форма замовлення перекладу</h1>
+      <form class="space-y-4">
+        <input type="text" placeholder="Ваше ім'я" class="w-full p-3 bg-white rounded shadow" required>
+        <input type="email" placeholder="Email" class="w-full p-3 bg-white rounded shadow" required>
+        <input type="url" placeholder="URL для файлу (Google Drive, Dropbox)" class="w-full p-3 bg-white rounded shadow" required>
+        <select class="w-full p-3 bg-white rounded shadow" required>
+          <option value="">Виберіть мову перекладу</option>
+          <option>Англійська → Українська</option>
+          <option>Українська → Англійська</option>
+          <option>Інша</option>
+        </select>
+        <button type="submit" class="w-full py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition">
+          Відправити
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="bg-gray-100 py-8">
+    <div class="container mx-auto px-6 text-center text-gray-700">
+      <p>&copy; 2025 Центр Перекладів. Всі права захищені.</p>
+    </div>
+  </footer>
+</body>
+</html>
