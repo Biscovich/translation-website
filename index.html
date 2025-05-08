@@ -1,185 +1,147 @@
+```
+translation-center/
+├── index.html
+├── about.html
+├── contact.html
+├── order.html
+├── prices.html
+└── news.html
+```
+
+<!-- index.html -->
+```html
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Translation Center</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Головна - Центр Перекладів</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- AOS for scroll animations -->
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <style>
-    /* Dynamic Cursor */
-    body { cursor: url('https://cdn-icons-png.flaticon.com/512/1828/1828817.png') 16 16, auto; }
-    a:hover, button:hover { cursor: pointer; }
-
-    /* Parallax Hero Background */
-    #hero {
-      background: url('https://images.unsplash.com/photo-1581093588401-8ae0f4737c0f?auto=format&fit=crop&w=1600&q=80') center/cover fixed;
-    }
-
-    /* Hero Overlay */
-    #hero .overlay {
-      background: rgba(255,255,255,0.6);
-    }
-
-    /* Scroll arrow bounce */
-    .scroll-arrow {
-      position: absolute;
-      bottom: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 2rem;
-      color: #274C77;
-      animation: bounce 2s infinite;
-      opacity: 0.8;
-    }
-    @keyframes bounce {
-      0%,100% { transform: translate(-50%, 0); }
-      50% { transform: translate(-50%, 10px); }
-    }
-
-    /* Section header background image */
-    .section-header {
-      position: relative;
-      text-align: center;
-      color: #fff;
-      overflow: hidden;
-    }
-    .section-header::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: url('https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=1600&q=80') center/cover;
-      opacity: 0.3;
-      filter: blur(2px);
-    }
-    .section-header h2 {
-      position: relative;
-      z-index: 1;
-    }
-
-    /* Service Card Tilt Effect */
-    .service-card { perspective: 800px; }
-    .service-card-inner {
-      transition: transform 0.3s ease;
-      transform-style: preserve-3d;
-    }
-    .service-card:hover .service-card-inner {
-      transform: rotateY(8deg) rotateX(4deg);
-    }
-
-    /* Micro-interactions & Neomorphic Cards */
-    .micro-button { transition: transform 0.2s, background-color 0.3s; }
-    .micro-button:hover { transform: scale(1.05); background-color: #6096BA !important; }
-    .neo-card {
-      background: #E7ECEF;
-      box-shadow: 8px 8px 16px #c8c8c8, -8px -8px 16px #ffffff;
-      transition: box-shadow 0.3s;
-    }
-    .neo-card:hover { box-shadow: 4px 4px 12px #c8c8c8, -4px -4px 12px #ffffff; }
-
-    /* Responsive fixes */
-    #hero { height: auto; min-height: 80vh; position: relative; }
-    #hero .overlay, #hero svg, #hero .graphic { display: none; }
-    @media (min-width: 768px) {
-      #hero { min-height: 100vh; }
-      #hero .overlay, #hero svg, #hero .graphic { display: block; }
-    }
-  </style>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-gray-50 text-gray-900 font-sans leading-relaxed">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 600, once: true });</script>
 
-  <!-- Header -->
-  <nav class="fixed top-0 w-full bg-white shadow z-30">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-      <div class="text-xl font-semibold text-brand-primary">Translation Center</div>
-      <button id="menu-toggle" class="md:hidden text-2xl text-brand-primary focus:outline-none">☰</button>
-      <ul id="menu" class="fixed inset-y-0 right-0 w-2/3 max-w-xs bg-white p-6 space-y-4 transform translate-x-full transition-transform duration-300 md:static md:flex md:space-x-6 md:space-y-0 md:translate-x-0 md:p-0">
-        <li><a href="#" class="block hover:text-brand-hover">Головна</a></li>
-        <li><a href="#services" class="block hover:text-brand-hover">Послуги</a></li>
-        <li><a href="#" class="block hover:text-brand-hover">Мови</a></li>
-        <li><a href="#prices" class="block hover:text-brand-hover">Ціни</a></li>
-        <li><a href="#about" class="block hover:text-brand-hover">Про нас</a></li>
-        <li><a href="#contact" class="block hover:text-brand-hover">Контакти</a></li>
-        <li><a href="#" class="block bg-brand-button text-brand-primary px-4 py-2 rounded-full micro-button text-center">Замовити</a></li>
-        <li><span class="block">UA | ENG</span></li>
-      </ul>
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md py-4 fixed w-full z-50">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-indigo-600 hover:text-indigo-700">Центр Перекладів</a>
+      <div class="space-x-6">
+        <a href="about.html" class="text-gray-700 hover:text-indigo-600 transition">Про нас</a>
+        <a href="contact.html" class="text-gray-700 hover:text-indigo-600 transition">Контакти</a>
+        <a href="order.html" class="text-gray-700 hover:text-indigo-600 transition">Замовити</a>
+        <a href="prices.html" class="text-gray-700 hover:text-indigo-600 transition">Ціни</a>
+        <a href="news.html" class="text-gray-700 hover:text-indigo-600 transition">Новини</a>
+      </div>
     </div>
   </nav>
 
-  <!-- Hero Section with Parallax & Scroll Indicator -->
-  <section id="hero" class="relative">
-    <div class="overlay absolute inset-0"></div>
-    <div class="scroll-arrow">↓</div>
-    <div class="relative flex flex-col items-center justify-center text-center text-gray-900 px-6 pt-24 pb-16 md:pb-0">
-      <h1 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-4" data-aos="fade-up">Професійні переклади для вашого бізнесу</h1>
-      <p class="text-base sm:text-lg md:text-2xl mb-8 text-brand-secondary" data-aos="fade-up" data-aos-delay="200">Швидко. Якісно. Надійно.</p>
-      <a href="#" class="inline-block bg-brand-button text-brand-primary px-8 py-4 rounded-full font-semibold micro-button" data-aos="zoom-in" data-aos-delay="400">Отримати ціну</a>
+  <!-- Hero -->
+  <section class="h-screen pt-20 bg-cover bg-center" style="background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('https://source.unsplash.com/1600x900/?language,books');">
+    <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+      <h1 class="text-5xl font-bold mb-4 text-gray-800">Професійні послуги перекладу</h1>
+      <p class="text-xl mb-6">Точність. Якість. Оперативність.</p>
+      <a href="order.html" class="inline-block px-8 py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition">Замовити зараз</a>
     </div>
   </section>
 
-  <!-- Services Section with Header Image & Tilt Cards -->
-  <section id="services" class="py-16">
-    <div class="section-header py-16" data-aos="fade-right">
-      <h2 class="text-3xl md:text-4xl font-bold">Наші послуги</h2>
-    </div>
-    <div class="max-w-7xl mx-auto px-6 grid gap-8 md:grid-cols-3">
-      <div class="service-card" data-aos="fade-left">
-        <div class="service-card-inner neo-card p-8 rounded-2xl">
-          <img src="https://images.unsplash.com/photo-1557426273-119e92801323?auto=format&fit=crop&w=400&q=80" alt="Written" class="w-full h-32 object-cover rounded mb-4 opacity-80">
-          <h3 class="text-xl font-semibold mb-2">Письмові переклади</h3>
-          <p class="text-base text-brand-secondary">Документи, статті, контракти та інші тексти будь-якої складності.</p>
+  <!-- Services -->
+  <section class="py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-12 text-center text-gray-800" data-aos="fade-up">Наші послуги</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://source.unsplash.com/400x300/?document" alt="Документи" class="rounded-md mb-4">
+          <h3 class="text-2xl font-semibold mb-2">Документальний переклад</h3>
+          <p>Офіційний переклад сертифікатів, дипломів, контрактів та інших документів.</p>
         </div>
-      </div>
-      <div class="service-card" data-aos="fade-up">
-        <div class="service-card-inner neo-card p-8 rounded-2xl bg-[#6096BA] text-white">
-          <img src="https://images.unsplash.com/photo-1521804906055-dabf7c7ea196?auto=format&fit=crop&w=400&q=80" alt="Spoken" class="w-full h-32 object-cover rounded mb-4 opacity-80">
-          <h3 class="text-xl font-semibold mb-2">Усний переклад</h3>
-          <p class="text-base">Супровід зустрічей, конференцій, презентацій.</p>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://source.unsplash.com/400x300/?interpretation" alt="Усний" class="rounded-md mb-4">
+          <h3 class="text-2xl font-semibold mb-2">Усний переклад</h3>
+          <p>Синхронний та послідовний усний переклад на заходах та зустрічах.</p>
         </div>
-      </div>
-      <div class="service-card" data-aos="fade-right">
-        <div class="service-card-inner neo-card p-8 rounded-2xl bg-brand-secondary text-white">
-          <img src="https://images.unsplash.com/photo-1575057946689-bbfbf4fbc5a3?auto=format&fit=crop&w=400&q=80" alt="Notary" class="w-full h-32 object-cover rounded mb-4 opacity-80">
-          <h3 class="text-xl font-semibold mb-2">Нотаріальне засвідчення</h3>
-          <p class="text-base text-gray-100">Офіційне завірення перекладів для державних органів.</p>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
+          <img src="https://source.unsplash.com/400x300/?localization" alt="Локалізація" class="rounded-md mb-4">
+          <h3 class="text-2xl font-semibold mb-2">Локалізація</h3>
+          <p>Адаптація сайтів, додатків та маркетингових матеріалів для міжнародного ринку.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-100 text-gray-700 py-12">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm" data-aos="fade-up">
-      <div>
-        <h4 class="font-semibold text-lg mb-3">Про компанію</h4>
-        <p>Центр перекладів із багаторічним досвідом. Ми надаємо професійні мовні послуги понад 30 мовами.</p>
-      </div>
-      <div>
-        <h4 class="font-semibold text-lg mb-3">Швидкі посилання</h4>
-        <ul class="space-y-2">
-          <li><a href="#services" class="hover:text-brand-hover">Послуги</a></li>
-          <li><a href="#" class="hover:text-brand-hover">Мови</a></li>
-          <li><a href="#prices" class="hover:text-brand-hover">Ціни</a></li>
-          <li><a href="#contact" class="hover:text-brand-hover">Контакти</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-semibold text-lg mb-3">Контакти</h4>
-        <p>вул. Прикладна, 123<br>Київ, Україна<br>+38 (099) 123-45-67<br>info@pereklad.ua</p>
-      </div>
+  <footer class="bg-gray-100 py-8 mt-16">
+    <div class="container mx-auto px-6 text-center text-gray-700">
+      <p>&copy; 2025 Центр Перекладів. Всі права захищені.</p>
     </div>
-    <div class="text-center text-xs mt-8">&copy; 2025 Translation Center. Усі права захищено.</div>
   </footer>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ once: true });
-    // Mobile menu toggle
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-    toggle.addEventListener('click', () => menu.classList.toggle('translate-x-full'));
-  </script>
 </body>
 </html>
+```
+
+<!-- about.html -->
+```html
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Про нас - Центр Перекладів</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 600, once: true });</script>
+  <nav class="bg-white shadow-md py-4 fixed w-full z-50">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-indigo-600">Центр Перекладів</a>
+      <div class="space-x-6">
+        <a href="about.html" class="text-gray-700 hover:text-indigo-600">Про нас</a>
+        <a href="contact.html" class="text-gray-700 hover:text-indigo-600">Контакти</a>
+        <a href="order.html" class="text-gray-700 hover:text-indigo-600">Замовити</a>
+        <a href="prices.html" class="text-gray-700 hover:text-indigo-600">Ціни</a>
+        <a href="news.html" class="text-gray-700 hover:text-indigo-600">Новини</a>
+      </div>
+    </div>
+  </nav>
+  <section class="pt-24 pb-16">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-8">
+      <img src="https://source.unsplash.com/600x400/?team,office" alt="Наша команда" class="w-full md:w-1/2 rounded-lg shadow-lg" data-aos="fade-right">
+      <div class="w-full md:w-1/2" data-aos="fade-left">
+        <h1 class="text-4xl font-bold mb-4">Хто ми?</h1>
+        <p class="mb-4">Ми — команда досвідчених перекладачів, що спеціалізуються на технічних, юридичних та маркетингових текстах. Наш досвід гарантує високу точність та якість.</p>
+        <p>Ми прагнемо допомогти вам подолати мовні бар’єри та знайти спільну мову з міжнародною аудиторією.</p>
+      </div>
+    </div>
+  </section>
+  <footer class="bg-gray-100 py-8">
+    <div class="container mx-auto px-6 text-center text-gray-700">
+      <p>&copy; 2025 Центр Перекладів. Всі права захищені.</p>
+    </div>
+  </footer>
+</body>
+</html>
+```
+
+<!-- contact.html -->
+```html
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакти - Центр Перекладів</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+  <nav class="bg-white shadow-md py-4 fixed w-full z-50">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-indigo-600">Центр Перекладів</a>
+      <div class="space-x-6">
+        <a href="about.html" class="text-gray-700 hover:text-indigo-600">Про нас</a>
+        <a href="contact.html" class="text-gray-700 hover:text-indigo-600">Контакти</a>
+        <a href="order.html" class="text-gray-700 hover:text-indigo-600">Замовити</a>
+        <a href="prices.html" class="text-gray-700 hover:text-indigo-600">Ціни</a>
+        <a href="news.html```
