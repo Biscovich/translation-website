@@ -9,20 +9,33 @@
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans pt-20 leading-relaxed">
   <!-- NAVBAR -->
-  <nav class="bg-white shadow-md py-4 fixed w-full top-0 z-50">
-    <div class="container mx-auto px-6 flex justify-between items-center">
-      <a href="index.html" class="text-2xl font-bold text-indigo-600 hover:text-indigo-700">
-        Центр Перекладів
-      </a>
-      <div class="space-x-6">
-        <a href="about.html"    class="text-gray-700 hover:text-indigo-600">Про нас</a>
-        <a href="services.html" class="text-gray-700 hover:text-indigo-600">Послуги</a>
-        <a href="contact.html"  class="text-gray-700 hover:text-indigo-600">Контакти</a>
-        <a href="news.html"     class="text-gray-700 hover:text-indigo-600">Новини</a>
-      </div>
-    </div>
-  </nav>
-
+  <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <a href="index.html" class="text-xl sm:text-2xl font-bold text-indigo-600 hover:text-indigo-700">
+      Центр Перекладів
+    </a>
+    <!-- Бургер на мобілці -->
+    <button id="nav-toggle" class="md:hidden text-gray-700 focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+    <!-- Меню -->
+    <ul id="nav-menu" class="hidden md:flex space-x-4 lg:space-x-6 text-gray-700">
+      <li><a href="about.html"    class="hover:text-indigo-600">Про нас</a></li>
+      <li><a href="services.html" class="hover:text-indigo-600">Послуги</a></li>
+      <li><a href="contact.html"  class="hover:text-indigo-600">Контакти</a></li>
+      <li><a href="news.html"     class="hover:text-indigo-600">Новини</a></li>
+    </ul>
+  </div>
+</nav>
+<script>
+  document.getElementById('nav-toggle').addEventListener('click', () => {
+    document.getElementById('nav-menu').classList.toggle('hidden');
+  });
+</script>
 
 
   <!-- CONTENT -->
