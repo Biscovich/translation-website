@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Головна – Центр Перекладів</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans pt-20 leading-relaxed">
+  <!-- NAVBAR -->
+  <nav class="bg-white shadow-md py-4 fixed w-full top-0 z-50">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-indigo-600 hover:text-indigo-700">Центр Перекладів</a>
+      <div class="space-x-6">
+        <a href="about.html"    class="text-gray-700 hover:text-indigo-600">Про нас</a>
+        <a href="services.html" class="text-gray-700 hover:text-indigo-600">Послуги</a>
+        <a href="contact.html"  class="text-gray-700 hover:text-indigo-600">Контакти</a>
+        <a href="news.html"     class="text-gray-700 hover:text-indigo-600">Новини</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="h-screen pt-20 bg-cover bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('images/translation-photo.png');">
+    <div class="container mx-auto px-6 text-center text-white" data-aos="fade-up">
+      <h1 class="text-5xl font-bold mb-4">Професійні послуги перекладу</h1>
+      <p class="text-xl mb-6">Точність. Якість. Оперативність.</p>
+      <a href="services.html" class="px-8 py-3 bg-indigo-600 rounded-lg shadow hover:bg-indigo-700 transition">Замовити зараз</a>
+    </div>
+  </section>
+
+  <!-- ЧОМУ МИ -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-8 text-center text-gray-800" data-aos="fade-up">Чому обирають нас</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 bg-gray-50 rounded-lg shadow hover:shadow-lg transition cursor-pointer" data-aos="fade-up" data-aos-delay="100">
+          <a href="experience.html" class="block">
+            <h3 class="text-2xl font-semibold mb-2">Досвід роботи</h3>
+            <p>Понад 10 років на ринку та понад 5 000 успішних проектів.</p>
+          </a>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-lg shadow hover:shadow-lg transition cursor-pointer" data-aos="fade-up" data-aos-delay="200">
+          <a href="partners.html" class="block">
+            <h3 class="text-2xl font-semibold mb-2">Співпраця з компаніями</h3>
+            <p>Google, IKEA, Nova Poshta та інші міжнародні клієнти.</p>
+          </a>
+        </div>
+        <div class="p-6 bg-gray-50 rounded-lg shadow hover:shadow-lg transition cursor-pointer" data-aos="fade-up" data-aos-delay="300">
+          <a href="clients.html" class="block">
+            <h3 class="text-2xl font-semibold mb-2">Наші клієнти</h3>
+            <p>Більше ніж 200 задоволених клієнтів у різних галузях.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- НАШІ ПОСЛУГИ -->
+  <section class="py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-12 text-center text-gray-800" data-aos="fade-up">Наші послуги</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="text-2xl font-semibold mb-2">Документальний переклад</h3>
+          <p>Переклад сертифікатів, дипломів, контрактів.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+          <h3 class="text-2xl font-semibold mb-2">Усний переклад</h3>
+          <p>Синхронний та послідовний переклад заходів.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
+          <h3 class="text-2xl font-semibold mb-2">Локалізація</h3>
+          <p>Адаптація сайтів та додатків для міжнародного ринку.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-100 py-8">
+    <div class="container mx-auto px-6 text-center text-gray-700">
+      <p>&copy; 2025 Центр Перекладів. Всі права захищені.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 600, once: true });</script>
+</body>
+</html>

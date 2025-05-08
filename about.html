@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Про нас – Центр Перекладів</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans pt-20 leading-relaxed">
+  <!-- NAVBAR -->
+  <nav class="bg-white shadow-md py-4 fixed w-full top-0 z-50">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-indigo-600 hover:text-indigo-700">Центр Перекладів</a>
+      <div class="space-x-6">
+        <a href="index.html"      class="text-gray-700 hover:text-indigo-600">Головна</a>
+        <a href="services.html"   class="text-gray-700 hover:text-indigo-600">Послуги</a>
+        <a href="about.html"      class="text-gray-700 hover:text-indigo-600">Про нас</a>
+        <a href="contact.html"    class="text-gray-700 hover:text-indigo-600">Контакти</a>
+        <a href="news.html"       class="text-gray-700 hover:text-indigo-600">Новини</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO IMAGE BLOCK -->
+  <section class="h-96 bg-cover bg-center" style="background-image: url('images/photo-team.avif');" data-aos="fade-in">
+  </section>
+
+  <!-- VALUES -->
+  <section class="py-16 bg-gray-50" data-aos="fade-up">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 text-center">Наші цінності</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition text-center">
+          <h3 class="text-xl font-semibold mb-2">Точність</h3>
+          <p>Гарантуємо високу якість та вичитку носієм мови для бездоганного результату.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition text-center">
+          <h3 class="text-xl font-semibold mb-2">Конфіденційність</h3>
+          <p>Забезпечуємо захист ваших даних на всіх етапах роботи над проектом.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition text-center">
+          <h3 class="text-xl font-semibold mb-2">Швидкість</h3>
+          <p>Миттєво реагуємо на запити та дотримуємося обумовлених дедлайнів.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="py-16" data-aos="fade-up">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 text-center">Наша історія</h2>
+      <ul class="relative border-l border-gray-300">
+        <li class="mb-10 ml-6">
+          <div class="absolute w-3 h-3 bg-indigo-600 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+          <h3 class="flex items-center mb-1 text-lg font-semibold">2012 — Заснування</h3>
+          <p>Наша перша команда з 3 перекладачів розпочала діяльність у Львові.</p>
+        </li>
+        <li class="mb-10 ml-6">
+          <div class="absolute w-3 h-3 bg-indigo-600 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+          <h3 class="flex items-center mb-1 text-lg font-semibold">2016 — 1000+ проектів</h3>
+          <p>Ми святкували успішне завершення тисячі перекладів для корпоративних клієнтів.</p>
+        </li>
+        <li class="mb-10 ml-6">
+          <div class="absolute w-3 h-3 bg-indigo-600 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+          <h3 class="flex items-center mb-1 text-lg font-semibold">2020 — Розширення</h3>
+          <p>Відкрили офіс у Києві та запустили відділ усного перекладу для онлайн-заходів.</p>
+        </li>
+        <li class="ml-6">
+          <div class="absolute w-3 h-3 bg-indigo-600 rounded-full mt-1.5 -left-1.5 border border-white"></div>
+          <h3 class="flex items-center mb-1 text-lg font-semibold">2024 — 5000+ проектів</h3>
+          <p>Наша команда виросла та успішно переклала понад 5000 проектів.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT CTA -->
+  <section id="contact" class="py-16 px-6" data-aos="fade-up">
+    <div class="max-w-xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-4">Зв'язатися з нами</h2>
+      <p class="mb-6">Залиште заявку через форму або напишіть нам на <a href="mailto:info@translation-center.com" class="text-indigo-600 hover:underline">info@translation-center.com</a></p>
+      <a href="contact.html" class="px-8 py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition">Перейти до контактів</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-100 py-8">
+    <div class="container mx-auto px-6 text-center text-gray-700">
+      <p>&copy; 2025 Центр Перекладів. Всі права захищені.</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ duration: 600, once: true });</script>
+</body>
+</html>
