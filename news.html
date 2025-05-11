@@ -2,107 +2,73 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Новини – Центр Перекладів</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans pt-20 leading-relaxed">
-
   <!-- NAVBAR -->
-<nav class="bg-white shadow-md fixed w-full top-0 z-50">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-    <a href="index.html" class="text-xl sm:text-2xl font-bold text-indigo-600 hover:text-indigo-700">
-      Центр Перекладів
-    </a>
-    <!-- Бургер на мобілці -->
-    <button id="nav-toggle" class="md:hidden text-gray-700 focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-    <!-- Меню -->
-    <ul
-  id="nav-menu"
-  class="hidden 
-         absolute top-full inset-x-0 
-         bg-white shadow-md 
-         flex flex-col space-y-2 
-         p-4 
-         md:static md:flex md:flex-row md:space-y-0 md:space-x-6 md:bg-transparent md:shadow-none md:p-0"
->
-  <li><a href="about.html"   class="hover:text-indigo-600">Про нас</a></li>
-  <li><a href="services.html"class="hover:text-indigo-600">Послуги</a></li>
-  <li><a href="contact.html" class="hover:text-indigo-600">Контакти</a></li>
-  <li><a href="news.html"    class="hover:text-indigo-600">Новини</a></li>
-</ul>
-  </div>
-</nav>
-<script>
-  document.getElementById('nav-toggle').addEventListener('click', () => {
-    document.getElementById('nav-menu').classList.toggle('hidden');
-  });
-</script>
-
+  <nav class="bg-white shadow-md py-4 fixed w-full top-0 z-50">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-indigo-600 hover:text-indigo-700">Центр Перекладів</a>
+      <div class="space-x-6">
+        <a href="about.html" class="text-gray-700 hover:text-indigo-600">Про нас</a>
+        <a href="services.html" class="text-gray-700 hover:text-indigo-600">Послуги</a>
+        <a href="contact.html" class="text-gray-700 hover:text-indigo-600">Контакти</a>
+        <a href="news.html" class="text-gray-700 hover:text-indigo-600">Новини</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- NEWS SECTION -->
   <section class="pt-24 pb-16 px-6">
     <div class="container mx-auto">
-      <h1 class="text-4xl font-bold mb-8 text-center text-gray-800" data-aos="fade-up">
-        Останні новини та факти
-      </h1>
+      <h1 class="text-4xl font-bold mb-8 text-center text-gray-800" data-aos="fade-up">Останні новини та оновлення</h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- 1. Акція -->
+
+        <!-- 1. Онлайн-платформа -->
         <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
-          <h2 class="text-2xl font-semibold mb-2">Весняна знижка 15% на всі послуги!</h2>
-          <p class="mb-4">
-            З 1 по 30 квітня даруємо знижку <strong>15%</strong> на документальний та усний переклад.
-            Використайте промокод <code>SPRING15</code> при оформленні замовлення.
-          </p>
+          <h2 class="text-2xl font-semibold mb-2">Запуск нової онлайн-платформи</h2>
+          <p class="mb-4">Ми раді повідомити про відкриття нашої інтерактивної онлайн-платформи, де ви можете відстежувати статус перекладу в реальному часі та спілкуватися з перекладачем через чат.</p>
+          <a href="news_platform.html" class="text-indigo-600 hover:underline">Детальніше →</a>
+        </article>
+
+        <!-- 2. Літня знижка -->
+        <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
+          <h2 class="text-2xl font-semibold mb-2">Літня знижка 20%</h2>
+          <p class="mb-4">З 1 червня по 31 серпня даруємо 20% знижки на будь-який документальний переклад. Промокод <code>SUMMER20</code> діє при онлайн-замовленні.</p>
           <a href="order.html" class="text-indigo-600 hover:underline">Замовити зі знижкою →</a>
         </article>
 
-        <!-- 2. Цікавий факт -->
-        <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
-          <h2 class="text-2xl font-semibold mb-2">Цікавий факт: Найскладніші слова</h2>
-          <p class="mb-4">
-            В англійській є слово <em>“pneumonoultramicroscopicsilicovolcanoconiosis”</em> з 45 букв — це технічний термін з медицини!
-            А в українській найдовше слово — <em>“рентгеноелектрокардіографічного”</em>.
-          </p>
+        <!-- 3. Цікавий факт -->
+        <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
+          <h2 class="text-2xl font-semibold mb-2">Цікавий факт: Найпоширеніша мова</h2>
+          <p class="mb-4">Найбільшою за кількістю носіїв вважається китайська (мандарин) — понад 1 млрд людей! Водночас англійська залишається найпоширенішою у міжнародному спілкуванні.</p>
           <a href="facts.html" class="text-indigo-600 hover:underline">Дізнатися більше →</a>
         </article>
 
-        <!-- 3. Новина -->
-        <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
-          <h2 class="text-2xl font-semibold mb-2">Наш блог: Як підготувати документ до перекладу</h2>
-          <p class="mb-4">
-            Нещодавно ми опублікували статтю про те, як правильно форматувати текст перед передачею перекладачам
-            — це скорочує час обробки на 20%!
-          </p>
-          <a href="blog.html#prep" class="text-indigo-600 hover:underline">Читати статтю →</a>
-        </article>
-
-        <!-- 4. Кейси -->
+        <!-- 4. Новий блог -->
         <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="400">
-          <h2 class="text-2xl font-semibold mb-2">Кейс: Локалізація мобільного додатку</h2>
-          <p class="mb-4">
-            Допомогли стартапу з Києва вивести їх UI/UX на світовий ринок, переклавши інтерфейс та документацію
-            на 5 мов за 2 тижні.
-          </p>
-          <a href="cases.html#app" class="text-indigo-600 hover:underline">Детальніше →</a>
+          <h2 class="text-2xl font-semibold mb-2">Новий блог: 5 порад для якісного перекладу</h2>
+          <p class="mb-4">Наш експерт поділився п’ятьма простими кроками, які допоможуть вам підготувати документи та скоротити час на їх переклад без втрати якості.</p>
+          <a href="blog.html#tips" class="text-indigo-600 hover:underline">Читати статтю →</a>
         </article>
 
-        <!-- 5. Тренд -->
+        <!-- 5. AI у перекладі -->
         <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="500">
-          <h2 class="text-2xl font-semibold mb-2">Тренд: штучний інтелект у перекладі</h2>
-          <p class="mb-4">
-            Використання AI-допоміжних інструментів дозволяє знизити вартість перекладу на 30%
-            та прискорити процес редагування.
-          </p>
-          <a href="news_ai.html" class="text-indigo-600 hover:underline">Дізнатися про AI →</a>
+          <h2 class="text-2xl font-semibold mb-2">AI-допомога перекладачам</h2>
+          <p class="mb-4">Ми інтегрували штучний інтелект для автоматичного попереднього перекладу. Це скорочує рутинну роботу на 30% та дозволяє фокусуватися на стилі та точності.</p>
+          <a href="news_ai.html" class="text-indigo-600 hover:underline">Деталі →</a>
         </article>
+
+        <!-- 6. Вебінар -->
+        <article class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="600">
+          <h2 class="text-2xl font-semibold mb-2">Безкоштовний вебінар з перекладу</h2>
+          <p class="mb-4">Запрошуємо на онлайн-вебінар «Основи професійного перекладу» 15 липня о 19:00. Реєструйтеся безкоштовно на нашому сайті.</p>
+          <a href="webinar.html" class="text-indigo-600 hover:underline">Зареєструватися →</a>
+        </article>
+
       </div>
     </div>
   </section>
@@ -114,7 +80,6 @@
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init({ duration: 600, once: true });</script>
 </body>
