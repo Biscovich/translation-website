@@ -1,1 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Послуги – Центр Перекладів</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans pt-20 leading-relaxed">
+  <!-- NAVBAR -->
+  <nav class="bg-white shadow-md py-4 fixed w-full top-0 z-50">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-indigo-600 hover:text-indigo-700">Центр Перекладів</a>
+      <div class="space-x-6">
+        <a href="about.html"    class="text-gray-700 hover:text-indigo-600">Про нас</a>
+        <a href="services.html" class="text-gray-700 hover:text-indigo-600">Послуги</a>
+        <a href="contact.html"  class="text-gray-700 hover:text-indigo-600">Контакти</a>
+        <a href="news.html"     class="text-gray-700 hover:text-indigo-600">Новини</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO ON SERVICES -->
+  <section class="h-96 bg-cover bg-center relative" style="background-image: url('images/photo-book.jpg');" data-aos="fade-in">
+    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+    <div class="relative z-10 flex items-center justify-center h-full">
+      <h1 class="text-4xl md:text-5xl font-bold text-white">Наші послуги та ціни</h1>
+    </div>
+  </section>
+
+  <!-- SERVICES SELECTION -->
+  <section class="py-16 px-6">
+    <div class="container mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Example service card -->
+        <label class="service-card cursor-pointer peer" data-aos="fade-up" data-aos-delay="100">
+          <input type="checkbox" name="services[]" value="Спеціалізований переклад" class="hidden peer" />
+          <div class="bg-white p-6 rounded-lg shadow-md transition transform hover:scale-105 peer-checked:bg-indigo-50 peer-checked:ring-4 peer-checked:ring-indigo-300">
+            <h2 class="text-2xl font-semibold mb-2">Спеціалізований переклад</h2>
+            <p class="text-sm italic mb-4">(вартість за 1 тис. символів)</p>
+            <p class="font-bold">від 150 грн</p>
+          </div>
+        </label>
+        <label class="service-card cursor-pointer peer" data-aos="fade-up" data-aos-delay="200">
+          <input type="checkbox" name="services[]" value="Переклад документів" class="hidden peer" />
+          <div class="bg-white p-6 rounded-lg shadow-md transition transform hover:scale-105 peer-checked:bg-indigo-50 peer-checked:ring-4 peer-checked:ring-indigo-300">
+            <h2 class="text-2xl font-semibold mb-2">Переклад документів</h2>
+            <p class="text-sm italic mb-4">(за документ до 1800 символів)</p>
+            <p class="font-bold">від 300 грн</p>
+          </div>
+        </label>
+        <label class="service-card cursor-pointer peer" data-aos="fade-up" data-aos-delay="300">
+          <input type="checkbox" name="services[]" value="Нотаріальне завірення" class="hidden peer" />
+          <div class="bg-white p-6 rounded-lg shadow-md transition transform hover:scale-105 peer-checked:bg-indigo-50 peer-checked:ring-4 peer-checked:ring-indigo-300">
+            <h2 class="text-2xl font-semibold mb-2">Нотаріальне завірення</h2>
+            <p class="text-sm italic mb-4">(засвідчення документів)</p>
+            <p class="font-bold">від 250 грн</p>
+          </div>
+        </label>
+        <!-- Add more services similarly -->
+      </div>
+
+      <div class="text-center mt-8" data-aos="fade-up" data-aos-delay="400">
+        <button id="sendServices" class="inline-flex items-center px-8 py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition">
+          <svg id="spinner" class="hidden animate-spin mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+          </svg>
+          <span>Надіслати заявку</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-100 py-8">
+    <div class="container mx-auto px-6 text-center text-gray-700">
+      <p>&copy; 2025 Центр Перекладів. Всі права захищені.</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 600, once: true });
+    document.getElementById('sendServices').addEventListener('click', async () => {
+      const btn = document.getElementById('sendServices');
+      const spinner = document.getElementById('spinner');
+      const selected = Array.from(document.querySelectorAll('input[name="services[]"]:checked')).map(ch => ch.value);
+      if (!selected.length) {
+        alert('Оберіть хоча б одну послугу');
+        return;
+      }
+      // Show spinner
+      spinner.classList.remove('hidden');
+      btn.disabled = true;
+
+      const token = 'YOUR_TELEGRAM_BOT_TOKEN'; // Вставте свій токен
+      const chatId = 'YOUR_CHAT_ID';           // Вставте свій chat_id
+      const message = encodeURIComponent('Нова заявка на послуги:%0A' + selected.map(s => '- ' + s).join('%0A'));
+      const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`;
+
+      try {
+        const res = await fetch(url);
+        if (res.ok) {
+          alert('Заявку надіслано успішно!');
+        } else {
+          alert('Помилка при відправці. Спробуйте пізніше.');
+        }
+      } catch (e) {
+        console.error(e);
+        alert('Не вдалося з'єднатися із сервером.');
+      } finally {
+        spinner.classList.add('hidden');
+        btn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>
 
