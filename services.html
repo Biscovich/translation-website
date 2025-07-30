@@ -82,23 +82,32 @@
 
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 600, once: true });
-    document.getElementById('sendServices').addEventListener('click', async () => {
+ <script>
+  AOS.init({ duration: 600, once: true });
+
+  document.getElementById('sendServices')
+    .addEventListener('click', async () => {
       const btn = document.getElementById('sendServices');
       const spinner = document.getElementById('spinner');
-      const selected = Array.from(document.querySelectorAll('input[name="services[]"]:checked')).map(ch => ch.value);
+      const selected = Array.from(
+        document.querySelectorAll('input[name="services[]"]:checked')
+      ).map(ch => ch.value);
+
       if (!selected.length) {
         alert('Оберіть хоча б одну послугу');
         return;
       }
-      // Show spinner
+
+      // показуємо спіннер
       spinner.classList.remove('hidden');
       btn.disabled = true;
 
-      const token = 'YOUR_TELEGRAM_BOT_TOKEN'; // Вставте свій токен
-      const chatId = 'YOUR_CHAT_ID';           // Вставте свій chat_id
-      const message = encodeURIComponent('Нова заявка на послуги:%0A' + selected.map(s => '- ' + s).join('%0A'));
+      const token  = 'YOUR_TELEGRAM_BOT_TOKEN'; // замініть на свій
+      const chatId = 'YOUR_CHAT_ID';            // замініть на свій
+      const message = encodeURIComponent(
+        'Нова заявка на послуги:%0A' +
+        selected.map(s => '- ' + s).join('%0D%0A')
+      );
       const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`;
 
       try {
@@ -110,13 +119,13 @@
         }
       } catch (e) {
         console.error(e);
-        alert('Не вдалося з'єднатися із сервером.');
+        alert("Не вдалося з'єднатися із сервером.");
       } finally {
         spinner.classList.add('hidden');
         btn.disabled = false;
       }
     });
-  </script>
+</script>
 </body>
 </html>
 
