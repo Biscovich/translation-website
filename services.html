@@ -29,47 +29,64 @@
     </div>
   </section>
 
-  <!-- SERVICES SELECTION -->
+  <!-- SERVICES FORM -->
   <section class="py-16 px-6">
     <div class="container mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Example service card -->
-        <label class="service-card cursor-pointer peer" data-aos="fade-up" data-aos-delay="100">
-          <input type="checkbox" name="services[]" value="Спеціалізований переклад" class="hidden peer" />
-          <div class="bg-white p-6 rounded-lg shadow-md transition transform hover:scale-105 peer-checked:bg-indigo-50 peer-checked:ring-4 peer-checked:ring-indigo-300">
-            <h2 class="text-2xl font-semibold mb-2">Спеціалізований переклад</h2>
-            <p class="text-sm italic mb-4">(вартість за 1 тис. символів)</p>
-            <p class="font-bold">від 150 грн</p>
-          </div>
-        </label>
-        <label class="service-card cursor-pointer peer" data-aos="fade-up" data-aos-delay="200">
-          <input type="checkbox" name="services[]" value="Переклад документів" class="hidden peer" />
-          <div class="bg-white p-6 rounded-lg shadow-md transition transform hover:scale-105 peer-checked:bg-indigo-50 peer-checked:ring-4 peer-checked:ring-indigo-300">
-            <h2 class="text-2xl font-semibold mb-2">Переклад документів</h2>
-            <p class="text-sm italic mb-4">(за документ до 1800 символів)</p>
-            <p class="font-bold">від 300 грн</p>
-          </div>
-        </label>
-        <label class="service-card cursor-pointer peer" data-aos="fade-up" data-aos-delay="300">
-          <input type="checkbox" name="services[]" value="Нотаріальне завірення" class="hidden peer" />
-          <div class="bg-white p-6 rounded-lg shadow-md transition transform hover:scale-105 peer-checked:bg-indigo-50 peer-checked:ring-4 peer-checked:ring-indigo-300">
-            <h2 class="text-2xl font-semibold mb-2">Нотаріальне завірення</h2>
-            <p class="text-sm italic mb-4">(засвідчення документів)</p>
-            <p class="font-bold">від 250 грн</p>
-          </div>
-        </label>
-        <!-- Add more services similarly -->
-      </div>
+      <!-- Форма обгортка -->
+      <form action="send.php" method="POST" class="space-y-8">
+        <!-- Контактні дані -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <label class="block">
+            <span class="text-gray-700">Ваше ім'я</span>
+            <input name="name" type="text" required
+                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
+          </label>
+          <label class="block">
+            <span class="text-gray-700">Email</span>
+            <input name="email" type="email" required
+                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500" />
+          </label>
+          <label class="block">
+            <span class="text-gray-700">Телефон</span>
+            <input name="phone" type="tel"
+                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                   placeholder="+380XXXXXXXXX" />
+          </label>
+          <label class="block col-span-1 md:col-span-2">
+            <span class="text-gray-700">Додаткове повідомлення</span>
+            <textarea name="message" rows="3"
+                      class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"></textarea>
+          </label>
+        </div>
 
-      <div class="text-center mt-8" data-aos="fade-up" data-aos-delay="400">
-        <button id="sendServices" class="inline-flex items-center px-8 py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition">
-          <svg id="spinner" class="hidden animate-spin mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
-          </svg>
-          <span>Надіслати заявку</span>
-        </button>
-      </div>
+        <!-- Вибір послуг -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Приклад послуги -->
+          <label class="service-card cursor-pointer peer" data-aos="fade-up" data-aos-delay="100">
+            <input type="checkbox" name="services[]" value="Спеціалізований переклад" class="hidden peer" />
+            <div class="bg-white p-6 rounded-lg shadow-md transition transform hover:scale-105 peer-checked:bg-indigo-50 peer-checked:ring-4 peer-checked:ring-indigo-300">
+              <h2 class="text-2xl font-semibold mb-2">Спеціалізований переклад</h2>
+              <p class="text-sm italic mb-4">(вартість за 1 тис. символів)</p>
+              <p class="font-bold">від 150 грн</p>
+            </div>
+          </label>
+          <!-- Додайте інші послуги аналогічно -->
+        </div>
+
+        <!-- Кнопка відправки -->
+        <div class="text-center mt-8">
+          <button type="submit"
+                  class="inline-flex items-center px-8 py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition disabled:opacity-50"
+                  id="sendBtn">
+            <svg id="spinner" class="hidden animate-spin mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg"
+                 fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+            </svg>
+            <span>Надіслати заявку</span>
+          </button>
+        </div>
+      </form>
     </div>
   </section>
 
@@ -82,50 +99,18 @@
 
   <!-- SCRIPTS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
- <script>
-  AOS.init({ duration: 600, once: true });
+  <script>
+    AOS.init({ duration: 600, once: true });
 
-  document.getElementById('sendServices')
-    .addEventListener('click', async () => {
-      const btn = document.getElementById('sendServices');
+    // Показуємо спіннер при сабміті
+    document.querySelector('form').addEventListener('submit', () => {
+      const btn = document.getElementById('sendBtn');
       const spinner = document.getElementById('spinner');
-      const selected = Array.from(
-        document.querySelectorAll('input[name="services[]"]:checked')
-      ).map(ch => ch.value);
-
-      if (!selected.length) {
-        alert('Оберіть хоча б одну послугу');
-        return;
-      }
-
-      // показуємо спіннер
       spinner.classList.remove('hidden');
       btn.disabled = true;
-
-      const token  = 'YOUR_TELEGRAM_BOT_TOKEN'; // замініть на свій
-      const chatId = 'YOUR_CHAT_ID';            // замініть на свій
-      const message = encodeURIComponent(
-        'Нова заявка на послуги:%0A' +
-        selected.map(s => '- ' + s).join('%0D%0A')
-      );
-      const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`;
-
-      try {
-        const res = await fetch(url);
-        if (res.ok) {
-          alert('Заявку надіслано успішно!');
-        } else {
-          alert('Помилка при відправці. Спробуйте пізніше.');
-        }
-      } catch (e) {
-        console.error(e);
-        alert("Не вдалося з'єднатися із сервером.");
-      } finally {
-        spinner.classList.add('hidden');
-        btn.disabled = false;
-      }
     });
-</script>
+  </script>
 </body>
 </html>
+
 
