@@ -9,41 +9,17 @@
 </head>
 <body class="bg-gray-50 text-gray-900 font-sans pt-20 leading-relaxed">
   <!-- NAVBAR -->
-<nav class="bg-white shadow-md fixed w-full top-0 z-50">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
-    <a href="index.html" class="text-xl sm:text-2xl font-bold text-indigo-600 hover:text-indigo-700">
-      Центр Перекладів
-    </a>
-    <!-- Бургер на мобілці -->
-    <button id="nav-toggle" class="md:hidden text-gray-700 focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
-           viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-    <!-- Меню -->
-   <ul
-  id="nav-menu"
-  class="hidden 
-         absolute top-full inset-x-0 
-         bg-white shadow-md 
-         flex flex-col space-y-2 
-         p-4 
-         md:static md:flex md:flex-row md:space-y-0 md:space-x-6 md:bg-transparent md:shadow-none md:p-0"
->
-  <li><a href="about.html"   class="hover:text-indigo-600">Про нас</a></li>
-  <li><a href="services.html"class="hover:text-indigo-600">Послуги</a></li>
-  <li><a href="contact.html" class="hover:text-indigo-600">Контакти</a></li>
-  <li><a href="news.html"    class="hover:text-indigo-600">Новини</a></li>
-</ul>
-</div>
-</nav>
-<script>
-  document.getElementById('nav-toggle').addEventListener('click', () => {
-    document.getElementById('nav-menu').classList.toggle('hidden');
-  });
-</script>
+  <nav class="bg-white shadow-md py-4 fixed w-full top-0 z-50">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-indigo-600 hover:text-indigo-700">Центр Перекладів</a>
+      <div class="space-x-6">
+        <a href="about.html"    class="text-gray-700 hover:text-indigo-600">Про нас</a>
+        <a href="services.html" class="text-gray-700 hover:text-indigo-600">Послуги</a>
+        <a href="contact.html"  class="text-gray-700 hover:text-indigo-600">Контакти</a>
+        <a href="news.html"     class="text-gray-700 hover:text-indigo-600">Новини</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- HERO ON SERVICES -->
   <section class="h-96 bg-cover bg-center relative" style="background-image: url('images/photo-book.jpg');" data-aos="fade-in">
@@ -53,90 +29,46 @@
     </div>
   </section>
 
-  <!-- SERVICES & PRICES -->
+  <!-- SERVICES SELECTION -->
   <section class="py-16 px-6">
     <div class="container mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        <!-- Спеціалізований переклад -->
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="100">
-          <h2 class="text-2xl font-semibold mb-2">Спеціалізований переклад</h2>
-          <p class="text-sm italic mb-4">(вартість за 1 тис. символів, залежить від мови і складності тексту)</p>
-          <ul class="space-y-2">
-            <li>Літературний переклад <span class="font-bold">від 150 грн</span></li>
-            <li>Економічний переклад <span class="font-bold">від 150 грн</span></li>
-            <li>Медичний переклад <span class="font-bold">від 170 грн</span></li>
-            <li>Технічний переклад <span class="font-bold">від 170 грн</span></li>
-            <li>Юридичний переклад <span class="font-bold">від 150 грн</span></li>
-          </ul>
-        </div>
-
-        <!-- Переклад документів -->
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="200">
-          <h2 class="text-2xl font-semibold mb-2">Переклад документів</h2>
-          <p class="text-sm italic mb-4">(вартість за 1 документ до 1800 символів)</p>
-          <ul class="space-y-2">
-            <li>Іноземний паспорт <span class="font-bold">300 грн</span></li>
-            <li>Документи ЗАЦС <span class="font-bold">від 300 грн</span></li>
-            <li>Довідка про несудимість <span class="font-bold">від 300 грн</span></li>
-            <li>Диплом, атестат <span class="font-bold">від 300 грн</span></li>
-          </ul>
-        </div>
-
-        <!-- Нотаріальне завірення -->
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="300">
-          <h2 class="text-2xl font-semibold mb-2">Нотаріальне завірення</h2>
-          <p class="text-sm italic mb-4">(вартість за 1 документ залежить від терміновості)</p>
-          <ul class="space-y-2">
-            <li>Нотаріальне засвідчення <span class="font-bold">від 250 грн</span></li>
-            <li>Нотаріальна копія <span class="font-bold">від 250 грн</span></li>
-            <li>Засвідчення печатками бюро <span class="font-bold">безкоштовно</span></li>
-          </ul>
-        </div>
-
-        <!-- Отримання документів -->
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="400">
-          <h2 class="text-2xl font-semibold mb-2">Отримання документів</h2>
-          <p class="text-sm italic mb-4">(вартість за документ, залежить від терміновості)</p>
-          <ul class="space-y-2">
-            <li>Довідка про несудимість <span class="font-bold">за запитом</span></li>
-            <li>Документи ЗАЦС <span class="font-bold">від 1500 грн</span></li>
-            <li>ІПН для іноземця <span class="font-bold">від 1000 грн</span></li>
-            <li>Посвідка на тимчасове проживання <span class="font-bold">від 3500 грн</span></li>
-          </ul>
-        </div>
-
-        <!-- Апостиль та легалізація -->
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="500">
-          <h2 class="text-2xl font-semibold mb-2">Апостиль та легалізація</h2>
-          <p class="text-sm italic mb-4">(вартість за 1 документ)</p>
-          <ul class="space-y-2">
-            <li>Апостиль на довідку про несудимість <span class="font-bold">від 1000 грн</span></li>
-            <li>Апостиль на документи ЗАЦС <span class="font-bold">500 грн</span></li>
-            <li>Апостиль на диплом <span class="font-bold">від 1000 грн</span></li>
-          </ul>
-        </div>
-
-        <!-- Усний переклад -->
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition" data-aos="fade-up" data-aos-delay="600">
-          <h2 class="text-2xl font-semibold mb-2">Усний переклад</h2>
-          <p class="text-sm italic mb-4">(вартість за годину, залежить від мови та формату)</p>
-          <ul class="space-y-2">
-            <li>Послідовний переклад <span class="font-bold">від 1200 грн/год</span></li>
-            <li>Синхронний переклад <span class="font-bold">від 6000 грн/год</span></li>
-            <li>Устаткування для синхронного перекладу <span class="font-bold">від 8000 грн</span></li>
-          </ul>
-        </div>
-
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Example service card -->
+        <label class="service-card cursor-pointer peer" data-aos="fade-up" data-aos-delay="100">
+          <input type="checkbox" name="services[]" value="Спеціалізований переклад" class="hidden peer" />
+          <div class="bg-white p-6 rounded-lg shadow-md transition transform hover:scale-105 peer-checked:bg-indigo-50 peer-checked:ring-4 peer-checked:ring-indigo-300">
+            <h2 class="text-2xl font-semibold mb-2">Спеціалізований переклад</h2>
+            <p class="text-sm italic mb-4">(вартість за 1 тис. символів)</p>
+            <p class="font-bold">від 150 грн</p>
+          </div>
+        </label>
+        <label class="service-card cursor-pointer peer" data-aos="fade-up" data-aos-delay="200">
+          <input type="checkbox" name="services[]" value="Переклад документів" class="hidden peer" />
+          <div class="bg-white p-6 rounded-lg shadow-md transition transform hover:scale-105 peer-checked:bg-indigo-50 peer-checked:ring-4 peer-checked:ring-indigo-300">
+            <h2 class="text-2xl font-semibold mb-2">Переклад документів</h2>
+            <p class="text-sm italic mb-4">(за документ до 1800 символів)</p>
+            <p class="font-bold">від 300 грн</p>
+          </div>
+        </label>
+        <label class="service-card cursor-pointer peer" data-aos="fade-up" data-aos-delay="300">
+          <input type="checkbox" name="services[]" value="Нотаріальне завірення" class="hidden peer" />
+          <div class="bg-white p-6 rounded-lg shadow-md transition transform hover:scale-105 peer-checked:bg-indigo-50 peer-checked:ring-4 peer-checked:ring-indigo-300">
+            <h2 class="text-2xl font-semibold mb-2">Нотаріальне завірення</h2>
+            <p class="text-sm italic mb-4">(засвідчення документів)</p>
+            <p class="font-bold">від 250 грн</p>
+          </div>
+        </label>
+        <!-- Add more services similarly -->
       </div>
 
-      <div class="text-center mt-8" data-aos="fade-up" data-aos-delay="700">
-        <button id="sendServices" class="px-8 py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition">
-          Надіслати заявку
+      <div class="text-center mt-8" data-aos="fade-up" data-aos-delay="400">
+        <button id="sendServices" class="inline-flex items-center px-8 py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition">
+          <svg id="spinner" class="hidden animate-spin mr-2 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+          </svg>
+          <span>Надіслати заявку</span>
         </button>
-        <p class="mt-4 text-gray-600">
-          Або <a href="contact.html" class="text-indigo-600 hover:underline">зв’язатися з нами</a>
-        </p>
       </div>
     </div>
   </section>
@@ -152,21 +84,37 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 600, once: true });
-    document.getElementById('sendServices').addEventListener('click', () => {
-      const selected = Array.from(document.querySelectorAll('input[name="services[]"]'))
-        .filter(ch => ch.checked).map(ch => ch.value);
+    document.getElementById('sendServices').addEventListener('click', async () => {
+      const btn = document.getElementById('sendServices');
+      const spinner = document.getElementById('spinner');
+      const selected = Array.from(document.querySelectorAll('input[name="services[]"]:checked')).map(ch => ch.value);
       if (!selected.length) {
         alert('Оберіть хоча б одну послугу');
         return;
       }
-      const subject = encodeURIComponent('Заявка на послуги перекладу');
-      const body = encodeURIComponent(
-        'Добрий день,%0D%0A\n' +
-        'Я хочу замовити:%0D%0A' +
-        selected.map(s => '- ' + s).join('%0D%0A') +
-        '%0D%0A\nДякую!'
-      );
-      window.location.href = `mailto:info@translation-center.com?subject=${subject}&body=${body}`;
+      // Show spinner
+      spinner.classList.remove('hidden');
+      btn.disabled = true;
+
+      const token = 'YOUR_TELEGRAM_BOT_TOKEN'; // Вставте свій токен
+      const chatId = 'YOUR_CHAT_ID';           // Вставте свій chat_id
+      const message = encodeURIComponent('Нова заявка на послуги:%0A' + selected.map(s => '- ' + s).join('%0A'));
+      const url = `https://api.telegram.org/bot${token}/sendMessage?chat_id=${chatId}&text=${message}`;
+
+      try {
+        const res = await fetch(url);
+        if (res.ok) {
+          alert('Заявку надіслано успішно!');
+        } else {
+          alert('Помилка при відправці. Спробуйте пізніше.');
+        }
+      } catch (e) {
+        console.error(e);
+        alert('Не вдалося з'єднатися із сервером.');
+      } finally {
+        spinner.classList.add('hidden');
+        btn.disabled = false;
+      }
     });
   </script>
 </body>
